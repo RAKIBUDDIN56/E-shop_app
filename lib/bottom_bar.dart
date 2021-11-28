@@ -34,7 +34,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages![_selectedPageIndex]['page'],
+      body: _pages![_selectedPageIndex],
       bottomNavigationBar: BottomAppBar(
         // color: Colors.white,
         shape: CircularNotchedRectangle(),
@@ -55,32 +55,32 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
             child: BottomNavigationBar(
               onTap: _selectPage,
               backgroundColor: Theme.of(context).primaryColor,
-              unselectedItemColor: Theme.of(context).textSelectionColor,
+              unselectedItemColor: Colors.blue,
               selectedItemColor: Colors.purple,
               currentIndex: _selectedPageIndex,
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
-                  title: Text('Home'),
+                  label: 'Home',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.rss_feed),
-                  title: Text('Feeds'),
+                  label: 'Feeds',
                 ),
                 BottomNavigationBarItem(
                   activeIcon: null,
                   icon: Icon(null),
-                  title: Text('Search'),
+                  label: 'Search',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
                     Icons.shopping_bag,
                   ),
-                  title: Text('Cart'),
+                  label: 'Cart',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),
-                  title: Text('User'),
+                  label: 'User',
                 ),
               ],
             ),
